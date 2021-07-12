@@ -1,0 +1,7 @@
+df <- read.csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/01-22-2021.csv")
+library(ggplot2)
+vn <- sum(df$Confirmed[df$Country_Region=="Vietnam"])
+la <- sum(df$Confirmed[df$Country_Region=="Laos"])
+cn <- sum(df$Confirmed[df$Country_Region=="China"])
+tl <- sum(df$Confirmed[df$Country_Region=="Thailand"])
+bar <- barplot(c(la,tl,vn, cn), main="Covid", horiz=TRUE,names.arg=c("Laos", "Thailand", "Vietnam", "China"))
